@@ -8,7 +8,7 @@ const projects = [
     title: "MinneSat Ground Station",
     description:
       "Python-based UI for the CanSat Satellite, designed to display flight data and issue commands for the AAS CanSat competition.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "ground_station.png",
     tags: ["Python", "Dash", "Pandas"],
     features: [
       "Designed using Dash and Pandas Python libraries for real-time data visualization",
