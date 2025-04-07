@@ -19,7 +19,7 @@ export default function HeroSection() {
           <AnimatedSection animation="fade-in">
             <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white dark:border-aerospace-text shadow-aerospace transition-transform duration-500 hover:scale-105">
               <Image
-                src="/placeholder.svg?height=200&width=200"
+                src="profile.png"
                 alt="Alex Kim"
                 fill
                 className="object-cover"
