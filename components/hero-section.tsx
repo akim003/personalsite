@@ -37,7 +37,7 @@ export default function HeroSection() {
 
             <AnimatedSection animation="fade-up" delay={300}>
               <p className="mx-auto max-w-[800px] text-lg md:text-xl lg:text-2xl text-aerospace-text/80 dark:text-white/80">
-                Hi, I'm Alex. Currently an aerospace and computer science major at the University of Minnesota.
+                Currently an aerospace and computer science major at the University of Minnesota interested in advancing space technology.
               </p>
             </AnimatedSection>
 
