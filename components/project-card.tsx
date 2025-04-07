@@ -34,9 +34,10 @@ export default function ProjectCard({ project }: ProjectProps) {
 
   return (
     <Card className="overflow-hidden h-full flex flex-col rounded-xl shadow-aerospace border-none transition-all duration-500 hover:shadow-lg hover:-translate-y-1 dark:bg-slate-700/60 dark:text-white">
-      <div className="relative h-48 w-full overflow-hidden">
+      {/* 5:3 aspect ratio container */}
+      <div className="relative w-full aspect-[5/3] overflow-hidden">
         <Image
-          src={project.image || "/placeholder.svg"}
+          src={project.image || "/ground_station.png"}
           alt={project.title}
           fill
           className="object-cover transition-transform duration-700 hover:scale-105"
