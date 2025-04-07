@@ -7,7 +7,6 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { Toaster } from "@/components/ui/toaster"
 import { ThemeScript } from "./theme-script"
-import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -37,7 +36,6 @@ export default function RootLayout({
           </div>
           <Toaster />
         </ThemeProvider>
-        <Analytics />
       </body>
     </html>
   )
