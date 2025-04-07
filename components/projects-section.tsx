@@ -42,7 +42,7 @@ const projects = [
     title: "North Star Rocket",
     description:
       "Designed and successfully launched an L1 rocket under the guidance of a mentor, to over 1000 feet before recovering it.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "north_star.png",
     tags: ["SolidWorks", "3D Printing", "MATLAB"],
     features: [
       "Utilized 3D printing and Solidworks for the creation of the nose cone",

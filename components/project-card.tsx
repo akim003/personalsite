@@ -37,7 +37,7 @@ export default function ProjectCard({ project }: ProjectProps) {
       {/* 5:3 aspect ratio container */}
       <div className="relative w-full aspect-[5/3] overflow-hidden">
         <Image
-          src={project.image || "/ground_station.png"}
+          src={project.image}
           alt={project.title}
           fill
           className="object-cover transition-transform duration-700 hover:scale-105"
