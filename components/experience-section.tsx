@@ -49,15 +49,15 @@ const experiences = [
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="py-16 md:py-20 bg-aerospace-background rounded-3xl">
+    <section id="experience" className="py-16 md:py-20 bg-aerospace-background dark:bg-aerospace-text/30 rounded-3xl">
       <div className="container px-4 md:px-6">
         <AnimatedSection animation="fade-up">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-aerospace-text">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-aerospace-text dark:text-white">
                 Experience
               </h2>
-              <p className="mx-auto max-w-[700px] text-aerospace-text/80 md:text-xl">
+              <p className="mx-auto max-w-[700px] text-aerospace-text/80 dark:text-white/80 md:text-xl">
                 My professional experience and leadership roles in aerospace and software engineering.
               </p>
             </div>

@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 210 70% 96%;
+    --background: 210 100% 98%;
     --foreground: 215 30% 17%;
 
     --card: 0 0% 100%;
@@ -13,7 +13,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 215 30% 17%;
 
-    --primary: 210 70% 72%;
+    --primary: 210 70% 82%;
     --primary-foreground: 215 30% 17%;
 
     --secondary: 210 50% 66%;
@@ -77,18 +77,18 @@
 
 /* Custom styles for aerospace theme */
 .card-aerospace {
-  @apply bg-white rounded-xl shadow-aerospace border-none transition-all duration-300 hover:shadow-lg;
+  @apply bg-white dark:bg-slate-700/60 rounded-xl shadow-aerospace border-none transition-all duration-300 hover:shadow-lg;
 }
 
 .section-aerospace {
-  @apply bg-aerospace-background rounded-xl p-8;
+  @apply bg-aerospace-background dark:bg-aerospace-text/30 rounded-xl p-8;
 }
 
 .button-aerospace {
-  @apply bg-aerospace-primary text-aerospace-text hover:bg-aerospace-hover transition-colors duration-300;
+  @apply bg-aerospace-primary text-aerospace-text dark:bg-aerospace-primary/80 dark:text-white hover:bg-aerospace-hover dark:hover:bg-aerospace-primary transition-colors duration-300;
 }
 
 .link-aerospace {
-  @apply text-aerospace-accent hover:text-aerospace-hover transition-colors duration-300;
+  @apply text-aerospace-accent dark:text-aerospace-primary hover:text-aerospace-hover dark:hover:text-aerospace-primary/80 transition-colors duration-300;
 }
 

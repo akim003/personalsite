@@ -61,10 +61,10 @@ export default function ProjectsSection() {
         <AnimatedSection animation="fade-up">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-aerospace-text">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-aerospace-text dark:text-white">
                 Projects
               </h2>
-              <p className="mx-auto max-w-[700px] text-aerospace-text/80 md:text-xl">
+              <p className="mx-auto max-w-[700px] text-aerospace-text/80 dark:text-white/80 md:text-xl">
                 A selection of my technical projects in aerospace engineering and software development.
               </p>
             </div>

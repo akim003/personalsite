@@ -33,7 +33,7 @@ export default function ProjectCard({ project }: ProjectProps) {
   const hasLinks = project.links && Object.keys(project.links).some((key) => !!project.links[key as keyof ProjectLink])
 
   return (
-    <Card className="overflow-hidden h-full flex flex-col rounded-xl shadow-aerospace border-none transition-all duration-500 hover:shadow-lg hover:-translate-y-1">
+    <Card className="overflow-hidden h-full flex flex-col rounded-xl shadow-aerospace border-none transition-all duration-500 hover:shadow-lg hover:-translate-y-1 dark:bg-slate-700/60 dark:text-white">
       <div className="relative h-48 w-full overflow-hidden">
         <Image
           src={project.image || "/placeholder.svg"}
@@ -44,13 +44,13 @@ export default function ProjectCard({ project }: ProjectProps) {
       </div>
       <CardHeader className="pb-2">
         <div className="space-y-1">
-          <h3 className="text-xl font-bold text-aerospace-text">{project.title}</h3>
+          <h3 className="text-xl font-bold text-aerospace-text dark:text-white">{project.title}</h3>
           <div className="flex flex-wrap gap-2">
             {project.tags.map((tag) => (
               <Badge
                 key={tag}
                 variant="secondary"
-                className="text-xs bg-aerospace-primary text-aerospace-text font-medium transition-colors duration-300"
+                className="text-xs bg-aerospace-primary text-aerospace-text dark:bg-aerospace-primary/30 dark:text-white font-medium transition-colors duration-300"
               >
                 {tag}
               </Badge>
@@ -59,14 +59,14 @@ export default function ProjectCard({ project }: ProjectProps) {
         </div>
       </CardHeader>
       <CardContent className="flex-grow">
-        <p className="text-aerospace-text/80">{project.description}</p>
+        <p className="text-aerospace-text/80 dark:text-white/80">{project.description}</p>
 
         {expanded && (
           <div className="mt-4">
-            <h4 className="font-medium mb-2 text-aerospace-text">Key Features</h4>
+            <h4 className="font-medium mb-2 text-aerospace-text dark:text-white">Key Features</h4>
             <ul className="list-disc pl-5 space-y-1">
               {project.features.map((feature, index) => (
-                <li key={index} className="text-sm text-aerospace-text/70">
+                <li key={index} className="text-sm text-aerospace-text/70 dark:text-white/70">
                   {feature}
                 </li>
               ))}
@@ -82,7 +82,7 @@ export default function ProjectCard({ project }: ProjectProps) {
                 variant="outline"
                 size="icon"
                 asChild
-                className="rounded-full border-aerospace-accent text-aerospace-accent hover:bg-aerospace-primary hover:text-aerospace-text hover:border-aerospace-primary transition-all duration-300 hover:rotate-6"
+                className="rounded-full border-aerospace-accent text-aerospace-accent dark:border-aerospace-primary dark:text-aerospace-primary hover:bg-aerospace-primary hover:text-aerospace-text dark:hover:bg-aerospace-primary/30 hover:border-aerospace-primary transition-all duration-300 hover:rotate-6"
               >
                 <Link href={project.links.github} target="_blank" rel="noopener noreferrer">
                   <Github className="h-4 w-4" />
@@ -95,7 +95,7 @@ export default function ProjectCard({ project }: ProjectProps) {
                 variant="outline"
                 size="icon"
                 asChild
-                className="rounded-full border-aerospace-accent text-aerospace-accent hover:bg-aerospace-primary hover:text-aerospace-text hover:border-aerospace-primary transition-all duration-300 hover:rotate-6"
+                className="rounded-full border-aerospace-accent text-aerospace-accent dark:border-aerospace-primary dark:text-aerospace-primary hover:bg-aerospace-primary hover:text-aerospace-text dark:hover:bg-aerospace-primary/30 hover:border-aerospace-primary transition-all duration-300 hover:rotate-6"
               >
                 <Link href={project.links.paper} target="_blank" rel="noopener noreferrer">
                   <FileText className="h-4 w-4" />
@@ -108,7 +108,7 @@ export default function ProjectCard({ project }: ProjectProps) {
             variant="ghost"
             size="sm"
             onClick={() => setExpanded(!expanded)}
-            className="flex items-center gap-1 text-aerospace-accent hover:text-aerospace-hover hover:bg-aerospace-primary/20 transition-all duration-300"
+            className="flex items-center gap-1 text-aerospace-accent dark:text-aerospace-primary hover:text-aerospace-hover dark:hover:text-aerospace-primary/70 hover:bg-aerospace-primary/20 dark:hover:bg-aerospace-primary/10 transition-all duration-300"
           >
             {expanded ? (
               <>

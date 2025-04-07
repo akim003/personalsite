@@ -10,6 +10,7 @@ import { useMediaQuery } from "@/hooks/use-media-query"
 import { scrollToSection } from "@/utils/scroll-utils"
 import { cn } from "@/lib/utils"
 import { useToast } from "@/hooks/use-toast"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -101,35 +102,38 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-40 w-full border-b border-aerospace-primary/30 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 transition-all duration-300",
+        "sticky top-0 z-40 w-full border-b border-aerospace-primary/30 bg-white/95 dark:bg-aerospace-text/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 supports-[backdrop-filter]:dark:bg-aerospace-text/60 transition-all duration-300",
         scrolled ? "shadow-md" : "",
       )}
     >
       <div className="container flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center space-x-2">
-          <span className="font-bold text-xl text-aerospace-text">Alex Kim</span>
+          <span className="font-bold text-xl text-aerospace-text dark:text-white">Alex Kim</span>
         </Link>
 
         {isMobile ? (
           <>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleMenu}
-              aria-label="Toggle menu"
-              className="text-aerospace-text hover:bg-aerospace-primary/20 hover:text-aerospace-accent"
-            >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </Button>
+            <div className="flex items-center gap-2">
+              <ThemeToggle />
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={toggleMenu}
+                aria-label="Toggle menu"
+                className="text-aerospace-text dark:text-white hover:bg-aerospace-primary/20 hover:text-aerospace-accent"
+              >
+                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </Button>
+            </div>
 
             {isMenuOpen && (
-              <div className="fixed inset-0 top-16 z-50 bg-white animate-in fade-in slide-in-from-top-5">
+              <div className="fixed inset-0 top-16 z-50 bg-white dark:bg-aerospace-text animate-in fade-in slide-in-from-top-5">
                 <nav className="container grid gap-6 p-6">
                   {navItems.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="text-lg font-medium text-aerospace-text hover:text-aerospace-accent transition-all duration-300 hover:translate-x-1"
+                      className="text-lg font-medium text-aerospace-text dark:text-white hover:text-aerospace-accent dark:hover:text-aerospace-primary transition-all duration-300 hover:translate-x-1"
                       onClick={(e) => {
                         e.preventDefault()
                         setIsMenuOpen(false)
@@ -151,7 +155,7 @@ export default function Header() {
                             scrollToSection(link.href.substring(1))
                           }
                         }}
-                        className="text-aerospace-text hover:text-aerospace-accent transition-all duration-300"
+                        className="text-aerospace-text dark:text-white hover:text-aerospace-accent dark:hover:text-aerospace-primary transition-all duration-300"
                         aria-label={link.label}
                       >
                         {link.icon}
@@ -169,14 +173,14 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-sm font-medium text-aerospace-text hover:text-aerospace-accent transition-all duration-300 relative group"
+                  className="text-sm font-medium text-aerospace-text dark:text-white hover:text-aerospace-accent dark:hover:text-aerospace-primary transition-all duration-300 relative group"
                   onClick={(e) => {
                     e.preventDefault()
                     scrollToSection(item.href.substring(1))
                   }}
                 >
                   {item.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-aerospace-accent transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-aerospace-accent dark:bg-aerospace-primary transition-all duration-300 group-hover:w-full"></span>
                 </Link>
               ))}
             </nav>
@@ -187,7 +191,7 @@ export default function Header() {
                     key={index}
                     onClick={link.onClick}
                     className={cn(
-                      "text-aerospace-text hover:text-aerospace-accent transition-all duration-300",
+                      "text-aerospace-text dark:text-white hover:text-aerospace-accent dark:hover:text-aerospace-primary transition-all duration-300",
                       copied && index === 0 ? "text-green-500" : "",
                     )}
                     aria-label={link.label}
@@ -200,13 +204,14 @@ export default function Header() {
                     href={link.href}
                     target={link.href.startsWith("http") ? "_blank" : undefined}
                     rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="text-aerospace-text hover:text-aerospace-accent transition-all duration-300"
+                    className="text-aerospace-text dark:text-white hover:text-aerospace-accent dark:hover:text-aerospace-primary transition-all duration-300"
                     aria-label={link.label}
                   >
                     {link.icon}
                   </Link>
                 ),
               )}
+              <ThemeToggle />
             </div>
           </div>
         )}

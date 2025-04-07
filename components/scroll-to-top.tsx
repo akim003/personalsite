@@ -33,7 +33,7 @@ export default function ScrollToTop() {
       variant="secondary"
       size="icon"
       className={cn(
-        "fixed bottom-6 right-6 rounded-full shadow-lg bg-aerospace-accent hover:bg-aerospace-hover text-white z-50 transition-all duration-300",
+        "fixed bottom-6 right-6 rounded-full shadow-lg bg-aerospace-accent dark:bg-aerospace-primary hover:bg-aerospace-hover dark:hover:bg-aerospace-primary/80 text-white dark:text-aerospace-text z-50 transition-all duration-300",
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10 pointer-events-none",
       )}
       onClick={scrollToTop}
