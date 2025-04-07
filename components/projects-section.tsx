@@ -25,7 +25,7 @@ const projects = [
     title: "MinneSat Flight Software",
     description:
       "C++ based controls program that runs on the satellite's PCB, controlling sensors and servos while making decisions based on collected data.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: "flight_software.png",
     tags: ["C++", "Arduino", "Embedded Systems"],
     features: [
       "Controls the sensors and servos in the satellite and uses the collected data to make decisions",
